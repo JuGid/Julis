@@ -1,0 +1,13 @@
+{
+    "name": "juliengidel/julis",
+    "description": "String modification made easy inspired by string.js",
+    "type": "library",
+    "require": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Juliengidel\\Julis\\": "src/"
+        }
+    }
+}
