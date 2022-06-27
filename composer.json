@@ -1,6 +1,6 @@
 {
     "name": "juliengidel/julis",
-    "description": "String modification made easy inspired by string.js",
+    "description": "String manipulation made easy, inspired by string.js",
     "type": "library",
     "require": {
         "phpunit/phpunit": "^9.5"
