@@ -17,41 +17,48 @@ class JulisTest extends TestCase
        $this->str = new Julis('This is my string');
     }
 
-    public function testShouldBetween()
+    public function testBetween()
     {
         $this->assertEquals('is is', $this->str->between(2,6));
     }
 
-    public function testShouldCamelize()
+    public function testCamelize()
     {
         $this->assertEquals('thisIsMyString', $this->str->camelize());
     }
 
-    public function testShouldCharAt()
+    public function testCharAt()
     {
         $this->assertEquals('i', $this->str->charAt(2));
     }
 
-    public function testShouldConcat()
+    public function testConcat()
     {
         $this->str->concat(new Julis('my'));
         $this->assertEquals('This is my stringmy', $this->str->__toString());
     }
 
-    public function testShouldContains()
+    public function testContains()
     {
         $this->assertEquals(true, $this->str->contains('my'));
         $this->assertEquals(false, $this->str->contains('That'));
     }
 
-    public function testShouldCount()
+    public function testCount()
     {
         $this->assertEquals(17, $this->str->count());
     }
 
-    public function testShouldDelete()
+    public function testDasherize()
+    {
+        $this->assertEquals('this-is-my-string', $this->str->dasherize());
+        $this->assertNotEquals('-this-is-my-string', $this->str->reset()->dasherize());
+    }
+
+    public function testDelete()
     {
         $this->assertEquals(' is my string', $this->str->delete('This'));
+        $this->assertEquals('Thisismystring', $this->str->reset()->delete(' '));
     }
 
     public function testEndsWith()
@@ -97,6 +104,11 @@ class JulisTest extends TestCase
     public function testLeft()
     {
         $this->assertEquals('This', $this->str->left(4));
+    }
+
+    public function testLowercase()
+    {
+        $this->assertEquals('this is my string', $this->str->lowercase());
     }
 
     public function testMultiply()

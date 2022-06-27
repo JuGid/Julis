@@ -47,6 +47,12 @@ class Julis implements JulisInterface {
         return strlen($this->str);
     }
 
+    public function dasherize() {
+        $this->str = strtolower($this->str);
+        $this->str = str_replace(' ', '-', $this->str);
+        return $this;
+    }
+
     public function delete(string $search) {
         $this->str = str_replace($search, '', $this->str);
         return $this;
@@ -87,12 +93,21 @@ class Julis implements JulisInterface {
         return $indexes;
     }
 
+    public function lastIndexOf(string $search) {
+        return end($this->indexesOf($search));
+    }
+
     public function left(int $length) {
         if($length > $this->count()) {
             return $this->str;
         }
 
         $this->str = substr($this->str, 0, $length);
+        return $this;
+    }
+
+    public function lowercase() {
+        $this->str = strtolower($this->str);
         return $this;
     }
 
@@ -140,6 +155,14 @@ class Julis implements JulisInterface {
         }
         $this->str = substr($this->str, $this->count() - $length, $length);
         return $this;
+    }
+
+    public function splitLeft(string $separator, int $maxSplit = PHP_INT_MAX) {
+        return explode($separator, $this->str, $maxSplit);
+    }
+
+    public function splitRight(string $separator, int $maxSplit) {
+
     }
 
     public function startsWith(string $search) {
