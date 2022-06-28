@@ -7,14 +7,14 @@ interface JulisInterface {
     public function camelize();
     public function capitalize();
     public function charAt($index);
-    public function concat(Julis $julis);
+    public function concat(Julis $julis, string $separator);
     public function contains(string $search);
     public function count();
     public function dasherize();
     public function delete(string $search);
     public function endsWith(string $search);
     public function equals(string $compare);
-    public function equalsIgnoreCare(string $compare);
+    public function equalsIgnoreCase(string $compare);
     public function firstIndexOf(string $search);
     public function indexesOf(string $search);
     public function lastIndexOf(string $search);

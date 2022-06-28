@@ -80,11 +80,11 @@ class JulisTest extends TestCase
 
     public function testEqualsIgnoreCase()
     {
-        $this->assertEquals(true, $this->str->equalsIgnoreCare('This is my string'));
-        $this->assertEquals(false, $this->str->equalsIgnoreCare('my string'));
-        $this->assertEquals(true, $this->str->equalsIgnoreCare('this is my string'));
-        $this->assertEquals(true, $this->str->equalsIgnoreCare('This Is My String'));
-        $this->assertEquals(false, $this->str->equalsIgnoreCare('foo'));
+        $this->assertEquals(true, $this->str->equalsIgnoreCase('This is my string'));
+        $this->assertEquals(false, $this->str->equalsIgnoreCase('my string'));
+        $this->assertEquals(true, $this->str->equalsIgnoreCase('this is my string'));
+        $this->assertEquals(true, $this->str->equalsIgnoreCase('This Is My String'));
+        $this->assertEquals(false, $this->str->equalsIgnoreCase('foo'));
     }
 
     public function testFirstIndexOf()
